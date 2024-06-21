@@ -3,6 +3,7 @@ require recipes-kernel/linux/linux-kernel-qcom_6.6.bb
 SECTION = "RT kernel"
 SUMMARY = "Linux Real time kernel for QCOM devices"
 DESCRIPTION = "Recipe to build real time Linux kernel"
+LICENSE = "GPLv2.0-with-linux-syscall-note"
 
 SRC_URI:append = "https://cdn.kernel.org/pub/linux/kernel/projects/rt/6.6/older/patches-6.6.30-rt30.tar.gz;md5sum=ca39832f62cc6dcae1284adaa998bb55 \
 		file://qcom_rt.cfg \
