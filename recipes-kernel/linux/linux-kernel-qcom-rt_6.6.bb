@@ -5,7 +5,7 @@ SUMMARY = "Linux Real time kernel for QCOM devices"
 DESCRIPTION = "Recipe to build real time Linux kernel"
 LICENSE = "GPLv2.0-with-linux-syscall-note"
 
-SRC_URI:append = "https://cdn.kernel.org/pub/linux/kernel/projects/rt/6.6/older/patches-6.6.30-rt30.tar.gz;md5sum=ca39832f62cc6dcae1284adaa998bb55 \
+SRC_URI:append = "https://cdn.kernel.org/pub/linux/kernel/projects/rt/6.6/older/patches-6.6.34-rt33.tar.gz;md5sum=ed3b8f8909742c7df1fa45d613b29ff0 \
 		file://qcom_rt.cfg \
 		file://0001-arch-Kconfig-Add-RT-kernel-support.patch \
 		file://0001-QCLINUX-arm64-defconfig-qcom-Disable-bcl-for-RT-kern.patch \
@@ -87,6 +87,7 @@ do_copy() {
         patch -p1 < ${WORKDIR}/patches/0070-serial-owl-Use-port-lock-wrappers.patch
         patch -p1 < ${WORKDIR}/patches/0071-serial-pch-Use-port-lock-wrappers.patch
         patch -p1 < ${WORKDIR}/patches/0072-serial-pic32-Use-port-lock-wrappers.patch
+        patch -p1 < ${WORKDIR}/patches/0073-serial-pmac_zilog-Use-port-lock-wrappers.patch
         patch -p1 < ${WORKDIR}/patches/0074-serial-pxa-Use-port-lock-wrappers.patch
         patch -p1 < ${WORKDIR}/patches/0075-serial-qcom-geni-Use-port-lock-wrappers.patch
         patch -p1 < ${WORKDIR}/patches/0076-serial-rda-Use-port-lock-wrappers.patch
@@ -170,6 +171,7 @@ do_copy() {
         patch -p1 < ${WORKDIR}/patches/0156-serial-8250-revert-drop-lockdep-annotation-from-seri.patch
         patch -p1 < ${WORKDIR}/patches/0157-printk-Avoid-false-positive-lockdep-report-for-legac.patch
         patch -p1 < ${WORKDIR}/patches/0158-drm-i915-Use-preempt_disable-enable_rt-where-recomme.patch
+        patch -p1 < ${WORKDIR}/patches/0159-drm-i915-Don-t-disable-interrupts-on-PREEMPT_RT-duri.patch
         patch -p1 < ${WORKDIR}/patches/0160-drm-i915-Don-t-check-for-atomic-context-on-PREEMPT_R.patch
         patch -p1 < ${WORKDIR}/patches/0161-drm-i915-Disable-tracing-points-on-PREEMPT_RT.patch
         patch -p1 < ${WORKDIR}/patches/0162-drm-i915-skip-DRM_I915_LOW_LEVEL_TRACEPOINTS-with-NO.patch
@@ -206,6 +208,6 @@ do_copy() {
         patch -p1 < ${WORKDIR}/patches/0193-Linux-6.6.18-rt23-REBASE.patch
         patch -p1 < ${WORKDIR}/patches/0194-arm-Disable-FAST_GUP-on-PREEMPT_RT-if-HIGHPTE-is-als.patch
         patch -p1 < ${WORKDIR}/patches/0195-printk-nbcon-move-locked_port-flag-to-struct-uart_po.patch
-        patch -p1 < ${WORKDIR}/patches/0196-Linux-6.6.30-rt30-REBASE.patch
+        patch -p1 < ${WORKDIR}/patches/0196-Linux-6.6.34-rt33-REBASE.patch
 }
 addtask copy after do_unpack before do_compile
