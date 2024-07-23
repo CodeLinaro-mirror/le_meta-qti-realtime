@@ -1,4 +1,4 @@
-require recipes-kernel/linux/linux-kernel-qcom_6.6.bb
+require recipes-kernel/linux/linux-qcom-custom_6.6.bb
 
 SECTION = "RT kernel"
 SUMMARY = "Linux Real time kernel for QCOM devices"
