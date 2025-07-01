@@ -1,3 +1,6 @@
+# Look for .patch files of linux-qcom-custom
+FILESEXTRAPATHS:prepend := "${QCOMHWEBASE}/recipes-kernel/linux/linux-qcom-custom:"
+
 require recipes-kernel/linux/linux-qcom-custom_6.6.bb
 
 SECTION = "RT kernel"
