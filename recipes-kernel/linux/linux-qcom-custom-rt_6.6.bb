@@ -8,7 +8,7 @@ SUMMARY = "Linux Real time kernel for QCOM devices"
 DESCRIPTION = "Recipe to build real time Linux kernel"
 LICENSE = "GPLv2.0-with-linux-syscall-note"
 
-SRC_URI:append = "https://cdn.kernel.org/pub/linux/kernel/projects/rt/6.6/older/patch-6.6.106-rt61.patch.gz;md5sum=1c2824cbc1ed7be10ed2072d29703484 \
+SRC_URI:append = "https://cdn.kernel.org/pub/linux/kernel/projects/rt/6.6/older/patches-6.6.110-rt62.tar.gz;md5sum=35cd7cf78bd97f572140e978a772aef9 \
 		file://qcom_rt.cfg \
 		file://0001-arch-Kconfig-Add-RT-kernel-support.patch \
 		file://0001-QCLINUX-Disable-bcl-driver-config-for-RT-kernel.patch \
